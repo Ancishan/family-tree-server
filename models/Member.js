@@ -5,7 +5,9 @@ const memberSchema = new mongoose.Schema({
   gender: { type: String, required: true },
   dob: { type: Date, required: true },
   parentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Member', default: null },
+  spouse: { type: String, default: '' }, 
   photo: { type: String, default: '' }
+ 
 });
 
 module.exports = mongoose.model('Member', memberSchema);

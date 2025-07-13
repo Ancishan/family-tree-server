@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 // Add a new member (admin only)
 router.post('/', async (req, res) => {
   try {
-    const { name, gender, dob, parentId, photo } = req.body;
+    const { name, gender, dob, parentId,spouse,  photo } = req.body;
 
     if (!name || !gender || !dob) {
       return res.status(400).json({ error: 'Name, Gender, and DOB are required.' });
@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
       gender,
       dob: new Date(dob),
       parentId: parentId || null,
+      spouse: spouse || '',
       photo: photo || ''
     });
 
